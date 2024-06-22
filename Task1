@@ -1,0 +1,72 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main(){
+    cout << "        WELCOME TO NUMBER GUESSING GAME            " << endl;
+
+    srand(time(0));
+    int random_number = (rand()%100);
+    string difi;
+    cout << "CHOOSE DIFICULTY(easy,medium,hard) : ";
+    cin >> difi;
+
+    cout << " RANDOM NUMBER IS BEING GENERATED " << endl;
+   
+    int chance ;
+    if(difi == "easy"){
+        chance = 10;
+        cout << "YOU WILL GET " << chance << " CHANCE TO PLAY THE GAME " << endl;
+        cout << endl;
+    }
+    else if(difi == "medium"){
+        chance = 7;
+        cout << "YOU WILL GET " << chance << " CHANCE TO PLAY THE GAME " << endl;
+         cout << endl;
+    }
+    else if(difi == "hard"){
+        chance = 5;
+        cout << "YOU WILL GET " << chance << " CHANCE TO PLAY THE GAME " << endl;
+         cout << endl;
+    }
+    else {
+        cout << " NO SUCH DIFFICULTY PRESENT " << endl;
+         cout << endl;
+    }
+
+    int i=0;
+    while(i<chance){
+
+        if(i==chance-1){
+            cout << "SORRY YOU LOOSE "<<endl;
+            break;
+        }
+
+        cout << "ENTER THE NUMBER BETWEEN 1 TO 100 : "; 
+        int n;
+        cin >> n;
+
+        if(n==random_number){
+            cout << "CONGRATULATION"<<endl;
+            cout << "YOU GUESSED THE NUMBER RIGHT";
+            break;
+        }
+
+        if((n+5) == random_number || (n-5) == random_number){
+            cout << "TOO CLOSE" << endl;
+        }
+
+        else if(n>random_number){
+            cout << "TOO HIGH" << endl;
+        }
+
+        else {
+            cout << "TOO LOW" << endl;
+        }
+        i++;
+    }
+    cout << endl;
+    cout << "THANK YOU FOR PLAYING " << endl;
+}
+
+
