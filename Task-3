@@ -1,0 +1,98 @@
+#include <iostream>
+using namespace std;
+template <class t1, class t2>
+class calci
+{
+public:
+    t1 a;
+    t2 b;
+    calci()
+    {
+        cout << "PERFORMING OPERATIONS : " << endl;
+    }
+    void setdata1(t1 x)
+    {
+        a = x;
+    }
+    void setdata2(t2 y)
+    {
+        b = y;
+    }
+    void addition()
+    {
+        cout << "Addition of two numbers " << a << " & " << b << " is : " << a + b << endl;
+    }
+    void subtraction()
+    {
+        cout << "Subtraction of two numbers " << a << " & " << b << " is : " << a - b << endl;
+    }
+    void division()
+    {
+        cout << "Division of two numbers " << a << " & " << b << " is : " << a / b << endl;
+    }
+    void multiplication()
+    {
+        cout << "Multiplication of two numbers " << a << " & " << b << " is : " << a * b << endl;
+    }
+};
+
+int main()
+{
+    cout << "                      WELCOME TO MY CALCULATOR " << endl;
+
+    while (true)
+    {
+        int a;
+        double b;
+        cout << "Enter the first number : ";
+        cin >> a;
+        cout << "Enter the second number : ";
+        cin >> b;
+
+        calci<int, double> simpleCalculator;
+
+        simpleCalculator.setdata1(a);
+        simpleCalculator.setdata2(b);
+
+        cout << "Type 1 to perform addition operation " << endl;
+        cout << "Type 2 to perform subtraction operation " << endl;
+        cout << "Type 3 to perform division operation " << endl;
+        cout << "Type 4 to perform multiplication operation " << endl;
+
+        int n;
+        cout << "Enter your choice : ";
+        cin >> n;
+
+        switch (n)
+        {
+        case 1:
+        {
+            simpleCalculator.addition();
+            break;
+        }
+        case 2:
+        {
+            simpleCalculator.subtraction();
+            break;
+        }
+
+        case 3:
+        {
+            simpleCalculator.division();
+            break;
+        }
+        case 4:
+        {
+            simpleCalculator.multiplication();
+            break;
+        }
+        default:
+        {
+            cout << "Enter valid choice " << endl;
+            break;
+        }
+        }
+    }
+
+    return 0;
+}
